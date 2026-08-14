@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Галерея</title>
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --accent-blue: #3b82f6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Шапка как на визитке */
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: var(--accent-blue);
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--text-main);
+    }
+
+    /* Галерея в стиле визитки */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .photo-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0f172a;
+      border: 1px solid #334155;
+      aspect-ratio: 1 / 1;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .photo-item img:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* Модальное окно (тёмное, в стиле визитки) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(15, 23, 42, 0.95);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      border-top: 1px solid #334155;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Максимовская М. С.</h1>
+    <nav class="nav-links">
+      <a href="index.html">Обо мне</a>
+      <a href="games.html">Игры</a>
+      <a href="gallery.html" style="color:var(--accent-blue)">Галерея</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Примеры работ и проектов</h2>
+
+    <div class="gallery" id="gallery">
+      <!-- Сюда вручную добавляешь свои картинки -->
+      <div class="photo-item">
+        <img src="img/editing_result_66aff87593a511f1b9548a00d402c9ca_1.jfif" alt="Пример работы 1" />
+      </div>
+      <div class="photo-item">
+        <img src="img/image.jpeg" alt="Пример работы 2" />
+      </div>
+      <div class="photo-item">
+        <img src="img/example3.jpg" alt="Пример работы 3" />
+      </div>
+      <div class="photo-item">
+        <img src="img/example4.jpg" alt="Пример работы 4" />
+      </div>
+      <div class="photo-item">
+        <img src="img/example5.jpg" alt="Пример работы 5" />
+      </div>
+      <div class="photo-item">
+        <img src="img/example6.jpg" alt="Пример работы 6" />
+      </div>
+    </div>
+  </main>
+
+  <!-- Модальное окно для просмотра в полный размер -->
+  <div class="modal" id="modal">
+    <img src="" alt="Полноэкранный просмотр" class="modal-img" id="modalImg" />
+  </div>
+
+  <footer>
+    &copy; 2026 Максимовская Марина Сергеевна. Сайт-визитка
+  </footer>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+
+    document.querySelectorAll('.photo-item img').forEach(img => {
+      img.onclick = () => {
+        modalImg.src = img.src;
+        modal.classList.add('active');
+      };
+    });
+
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    };
+  </script>
+</body>
+</html>
