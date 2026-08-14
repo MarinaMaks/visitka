@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Максимовская Марина Сергеевна — визитка</title>
+    <style>
+        :root {
+            --bg-color: #0b0f1a;
+            --card-bg: #151b2e;
+            --primary-blue: #2b4cc5;
+            --accent-blue: #4a6cfa;
+            --text-main: #e0e6f0;
+            --text-secondary: #a8b0c0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom: 1px solid #1f2a45;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        p, li {
+            color: var(--text-main);
+        }
+
+        a.btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        a.btn:hover {
+            background: var(--accent-blue);
+            color: #000;
+        }
+
+        a.link-plain {
+            color: var(--accent-blue);
+            text-decoration: underline;
+        }
+
+        a.link-plain:hover {
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Максимовская Марина Сергеевна</h1>
+        <p class="subtitle">Системный аналитик | Творчество с ИИ</p>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p>День рождения: 27.05.1986.</p>
+            <p>Родилась и всю жизнь прожила в г. Новосибирске.</p>
+            <p>Длительное время занималась бюджетной бухгалтерией, потом сменила род занятий — теперь работаю системным аналитиком в крупной МО города.</p>
+            <p>Увлекаюсь ИИ. Данный сайт‑визитка посвящён моему творчеству с ИИ.</p>
+        </section>
+
+        <section id="games">
+            <h2>Игры</h2>
+            <p>Это мои первые игры — попробовала, как оно, что‑то сложное сделать с ИИ. Оптимизировано под мобильный телефон.</p>
+            <br>
+            <a href="https://marinamaks.github.io/Games/index.html" class="btn">Перейти на стартовую страничку «Проба пера»</a>
+        </section>
+
+        <section id="images">
+            <h2>Изображения</h2>
+            <p>Здесь лежат мои картинки, сделанные с помощью ИИ.</p>
+            <br>
+            <a href="gallary.html" class="btn">Открыть галерею</a>
+        </section>
+
+        <section id="video">
+            <h2>Видео</h2>
+            <p>Раздел в разработке. Скоро появятся видеоматериалы по моим проектам и работе с ИИ.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Проекты</h2>
+            <p>В этом разделе будут представлены мои рабочие и творческие проекты: игровые прототипы, эксперименты с ИИ и другие разработки.</p>
+        </section>
+    </div>
+</body>
+</html>
